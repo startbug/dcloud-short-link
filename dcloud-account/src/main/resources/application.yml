@@ -5,6 +5,18 @@ server:
 spring:
   application:
     name: dcloud-account
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.213.100:8848
+        username: nacos
+        password: nacos
+
+  datasource:
+    url: jdbc:mysql://192.168.213.100:3306/dcloud_account?characterEncoding=utf8&connectTimeout=10000&socketTimeout=30000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: xdclass.net168
 
 # 配置plus打印sql日志
 mybatis-plus:

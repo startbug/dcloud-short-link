@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+# 应用名称
+spring:
+  application:
+    name: dcloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.213.100:8848
+        username: nacos
+        password: nacos
