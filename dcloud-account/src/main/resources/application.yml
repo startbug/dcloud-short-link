@@ -23,5 +23,5 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 sms:
-  template-id:
-  app-code:
+  template-id: JM1000372
+  app-code: 7486d5dba99340bcbe42afaf906369f1
