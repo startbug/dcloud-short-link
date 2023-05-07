@@ -41,13 +41,16 @@ public class SmsComponent {
      * 文档地址:https://market.aliyun.com/products/57000002/cmapi00046920.html#sku=yuncode4092000002
      */
     public void send(String to, String templateId, String value) {
+        long beginTime = System.currentTimeMillis();
         String url = String.format(SMS_BASE_URL, to, templateId, value);
         HttpHeaders headers = new HttpHeaders();
         headers.set(HttpHeaders.AUTHORIZATION, String.format(SMS_AUTHORIZATION, smsConfig.getAppCode()));
 
         HttpEntity<String> entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-        log.info("url={},body={}", url, response.getBody());
+
+        long endTime = System.currentTimeMillis();
+        log.info("耗时={}ms,url={},body={}", (endTime - beginTime), url, response.getBody());
         if (response.getStatusCode() == HttpStatus.OK) {
             log.info("发送短信成功,响应信息:{}", response.getBody());
         } else {
