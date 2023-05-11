@@ -26,7 +26,7 @@ public class NotifyServiceImpl implements NotifyService {
 
 
     @Override
-    @Async(value = "threadPoolTaskExecutor")
+//    @Async(value = "threadPoolTaskExecutor")
     public void testSend() {
 //        try {
 //            TimeUnit.SECONDS.sleep(2);

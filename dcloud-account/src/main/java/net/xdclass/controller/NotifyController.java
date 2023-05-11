@@ -28,13 +28,18 @@ public class NotifyController {
 
     private final NotifyService notifyService;
 
-    /**
-     * 测试发送验证码接口-主要是用于对比优化前后区别
-     */
     @GetMapping("/send_code")
     public JsonData sendCode() {
-        notifyService.testSend();
         return JsonData.buildSuccess();
     }
+
+//    /**
+//     * 测试发送验证码接口-主要是用于对比优化前后区别
+//     */
+//    @GetMapping("/test_send_code")
+//    public JsonData sendCode() {
+//        notifyService.testSend();
+//        return JsonData.buildSuccess();
+//    }
 
 }
